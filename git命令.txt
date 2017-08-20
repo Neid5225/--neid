@@ -5,7 +5,9 @@ $ git init 	初始化版本库
 $ ls -ah 	显示隐藏文件
 $git add xx.txt 把文件添加到仓库
 $git commit -m “注释内容” -m 后面输入的事本次提交的说明
-测试
-测试
-测试测试
-新测试
+
+需要上传到github
+$git add xxx.txt
+$git commit -m "xxx"
+$git push origin master
+
