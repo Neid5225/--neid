@@ -1,12 +1,12 @@
 ﻿hellow word
 8.20
 
-转化成数组
+					转化成数组
 arguments
 Array.prototype.slice.call(arguments)
 
 
-弹出窗口
+					弹出窗口
 遮罩最好使用fixed
 内容居中 CSS绝对定位适合固定宽高  否则用JS
 遮罩点击关闭考察事件冒泡
@@ -19,4 +19,5 @@ $('.overlay').click(function(e){
 })
 
 
-Cookie的弊端
+					Cookie的弊端
+1
