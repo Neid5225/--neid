@@ -34,3 +34,6 @@ $('.overlay').click(function(e){
   安全标志：设置后cookie只有在使用SSL连接的时候才会发送到服务器。例如cookie 只能发送给https://www.wrox.com而http://www.wrox.com则不会
 发送cookie。
 以上每段信息都作为 Set-Cookie头的一部分，用分号加空格来分隔每一段。
+secure标志 唯一一个Cookie里非名值对儿的部分 直接包含一个secure单词。（添加在分号空格后）
+
+这些部分都是服务器给浏览器的指示，以指定何时会被发送，而不会成为发送给服务器cookie信息的一部分。只有名值对儿才会被发送。
