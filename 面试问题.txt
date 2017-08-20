@@ -19,7 +19,18 @@ $('.overlay').click(function(e){
 })
 
 
-					Cookie的弊端  优缺点
+					Cookie（高程3 p630）
 1.cookie的最大存储量为4K
 2.cookie是绑定在特定域名下的，设定一个cookie后再给创建他的域名发送请求时，都会包含这个cookie。确保了保存在cookie中的信息
 只能让批准的接受者访问，不会被其他域访问。
+3.cookie的构成
+  名称：cookie的名称是不区分大小写的，但是实践中发现最好区分大小写，某些服务器会这样处理cookie。cookie的名称必须是经过URL编码的。
+  值：储存在cookie中的值必须经过RUL编码。
+  域：cookie对于哪个域是有效的。可以包含子域，也可以不包含。
+  路径：对于指定域中的那个路径，应该向服务器发送cookie。如制定cookie只能从http://www.wrox.com/books/中才能访问，http://www.wrox.com的
+	页面就不会发送cookie信息，即使请求都是来自同一个域的。
+  失效时间：表示cookie何时应该被删除的时间戳。浏览器默认回话结束时立即删除，但是可以通过设置这个时间将cookie保留。这个值是个GMT格式的
+	时间。
+  安全标志：设置后cookie只有在使用SSL连接的时候才会发送到服务器。例如cookie 只能发送给https://www.wrox.com而http://www.wrox.com则不会
+发送cookie。
+以上每段信息都作为 Set-Cookie头的一部分，用分号加空格来分隔每一段。
