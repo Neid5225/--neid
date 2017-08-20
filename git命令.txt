@@ -1,0 +1,8 @@
+﻿$ mkdir project	创建版本库（文件夹）
+$ cd project 	进入文件夹
+$ pwd		显示当前目录
+$ git init 	初始化版本库
+$ ls -ah 	显示隐藏文件
+$git add xx.txt 把文件添加到仓库
+$git commit -m “注释内容” -m 后面输入的事本次提交的说明
+测试
