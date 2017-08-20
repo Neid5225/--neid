@@ -19,5 +19,7 @@ $('.overlay').click(function(e){
 })
 
 
-					Cookie的弊端
-1
+					Cookie的弊端  优缺点
+1.cookie的最大存储量为4K
+2.cookie是绑定在特定域名下的，设定一个cookie后再给创建他的域名发送请求时，都会包含这个cookie。确保了保存在cookie中的信息
+只能让批准的接受者访问，不会被其他域访问。
