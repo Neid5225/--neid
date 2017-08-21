@@ -37,3 +37,113 @@ $('.overlay').click(function(e){
 secure标志 唯一一个Cookie里非名值对儿的部分 直接包含一个secure单词。（添加在分号空格后）
 
 这些部分都是服务器给浏览器的指示，以指定何时会被发送，而不会成为发送给服务器cookie信息的一部分。只有名值对儿才会被发送。
+
+
+					浏览器本地存储 web storage
+
+sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此
+sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。
+
+而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。
+
+Web Storage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie。
+
+但是Cookie也是不可以或缺的：Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生
+
+					CSS3新特性
+CSS3实现圆角（border-radius），阴影（box-shadow），
+对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
+transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
+增加了更多的CSS选择器  多背景 rgba 
+在CSS3中唯一引入的伪元素是::selection.
+媒体查询，多栏布局
+border-image
+					开发新页面模板
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+    <head>
+    　　<title>网站标题 - Admin10000.com </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Language" content="zh-CN" />
+        <meta name="Author" content="网页作者" /> 
+        <meta name="Copyright" content="网站版权" /> 
+        <meta name="keywords" content="网站关键字" />
+        <meta name="description" content="网站描述" />
+        <link rel="Shortcut Icon" href="网站.ico图标路径" />
+        <link type="text/css" rel="stylesheet" href="CSS文件路径" />
+        <script type="text/javascript" src="JS文件路径"></script>
+    </head>
+    <body>
+    
+    </body>
+</html>
+					CSS初始化模板
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+button, input, select, textarea { font-size:100%; }
+a{text-decoration:none;} 
+a:hover,a:active,a:focus{color:#000;text-decoration:underline;} 
+table { border-collapse:collapse; border-spacing:0; } 
+					
+
+					BFC
+
+对BFC规范的理解？ BFC，块级格式化上下文，一个创建了新的BFC的盒子是独立布局的，盒子里面的子元素的样式不会影响到外面的元素。在同一个BFC
+中的两个毗邻的块级盒在垂直方向（和布局方向有关系）的margin会发生折叠。 （W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行布
+局，以及与其他元素的关系和相互作用。）					
+
+BFC布局规则：
+
+内部的Box会在垂直方向，一个接一个地放置。
+Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+BFC的区域不会与float box重叠。
+BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+计算BFC的高度时，浮动元素也参与计算
+BFC如何触发：
+根元素
+float属性不为none
+position为absolute或fixed
+display为inline-block, table-cell, table-caption, flex, inline-flex
+overflow不为visible
+
+
+					html语义化
+说说你对语义化的理解？
+
+1，去掉或者丢失样式的时候能够让页面呈现出清晰的结构
+2，有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；
+3，方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；
+4，便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
+
+					
+					DOCTYPE  严格与混杂模式
+Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?
+
+（1）、<!DOCTYPE> 声明位于文档中的最前面，处于 <html> 标签之前。告知浏览器以何种模式来渲染文档。 
+
+（2）、严格模式的排版和 JS 运作模式是  以该浏览器支持的最高标准运行。
+
+（3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。
+
+（4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
