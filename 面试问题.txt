@@ -130,6 +130,133 @@ Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?
 （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。   
 
 
+					浮动
+解释下浮动和它的工作原理？清除浮动的技巧
+
+浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留。
+
+1.使用空标签清除浮动。
+   这种方法是在所有浮动标签后面添加一个空标签 定义css clear:both. 弊端就是增加了无意义标签。
+2.使用overflow。
+   给包含浮动元素的父标签添加css属性 overflow:auto; zoom:1; zoom:1用于兼容IE6。
+
+浮动元素引起的问题：
+（1）父元素的高度无法被撑开，影响与父元素同级的元素
+（2）与浮动元素同级的非浮动元素会跟随其后
+（3）若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构
+
+清浮动的方法：
+ 在父元素内最下边添加标签<div style="clear:box"><div>
+
+.clearbox:after{
+	height:0;
+	display:block;
+	content:"";
+	visibility:hidden;
+	clear:both;
+}
+.clearbox{zoom:1}(也有写display:inline-block/* for IE/Mac */)
+
+
+					DOM的操作 增删改查
+（1）创建新节点
+
+      createDocumentFragment()    //创建一个DOM片段
+
+      createElement()   //创建一个具体的元素
+
+      createTextNode()   //创建一个文本节点
+
+（2）添加、移除、替换、插入
+
+      appendChild()
+
+      removeChild()
+
+      replaceChild()
+
+      insertBefore() //在已有的子节点前插入一个新的子节点
+
+（3）查找
+
+      getElementsByTagName()    //通过标签名称
+
+      getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)
+
+      getElementById()    //通过元素Id，唯一性
+
+
+
+					*HTML5新特性
+html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
+
+* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
+
+* 拖拽释放(Drag and drop) API 
+  语义化更好的内容标签（header,nav,footer,aside,article,section）
+  音频、视频API(audio,video)
+  画布(Canvas) API
+  地理(Geolocation) API
+  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；
+  sessionStorage 的数据在浏览器关闭后自动删除
+
+  表单控件，calendar、date、time、email、url、search  
+  新的技术webworker, websocket, Geolocation
+
+* 移除的元素
+
+纯表现的元素：basefont，big，center，font, s，strike，tt，u；
+
+对可用性产生负面影响的元素：frame，frameset，noframes；
+
+支持HTML5新标签：
+
+* IE8/IE7/IE6支持通过document.createElement方法产生的标签，
+  可以利用这一特性让这些浏览器支持HTML5新标签，
+
+  浏览器支持新标签后，还需要添加标签默认的样式：
+
+* 当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
+   <!--[if lt IE 9]> 
+   <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script> 
+   <![endif]--> 
+如何区分： DOCTYPE声明\新增的结构元素\功能元素
+		
+
+					this.index(点击显示当前值)
+原生：
+for (var i = 0; i<3; i++){
+		 var oli = document.getElementsByClassName("oli");
+		 oli[i].index = i;
+		 oli[i].onclick = function(){
+		 	console.log(this.index)
+		 }
+
+}
+jquery eq:(jquery eq方法返回jquery对象 添加属性用attr 调用时用$(this))
+
+for (var i = 0; i<3; i++){
+		$("ul li").eq(i).attr("index",i);
+						
+			$("ul li").eq(i).click(function(){
+				console.log($(this).attr("index"))
+}
+
+jquery get:（jquery get方法返回DOM对象 正常.添加 调用时用this）
+for (var i = 0; i<3; i++){
+		$("ul li").get(i).index = i;
+			$("ul li").eq(i).click(function(){
+				console.log(this.index)
+			})
+}
+
+
+
+
+
+
+
+
 
 
 
